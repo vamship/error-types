@@ -1,8 +1,8 @@
 # Error Types
 
-Utility library for argument validations. Exports a set of classes that can be
-used to identify different types of errors. This is useful for post error
-processing, allowing for different behaviors for different error types.
+Exports a set of classes that can be used to identify different types of errors.
+This is useful for post error processing, allowing for different behaviors for
+different error types.
 
 Each error comes with a default error message, but also supports custom
 error messages. All error messages are prefixed with the argument name to help
