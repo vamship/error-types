@@ -1,4 +1,5 @@
 # @vamship/error-types
+
 _Exports custom error types that describe specific error conditions_
 
 Exports a set of classes that can be used to identify different types of errors.
@@ -10,11 +11,13 @@ error messages. All error messages are prefixed with the argument name to help
 make predictable decisions based on error messages.
 
 # Motivation
+
 Javascript is not a strongly typed language, but there are certain scenarios
 where having well defined types can be valuable. One of these scenarios pertain
 to error handling.
 
 Let us consider the following promise chain:
+
 ```
 const Promise = require('bluebird').Promise;
 ...
@@ -41,6 +44,7 @@ function fetchData(recordInfo) {
 In the above example, the exception handling code is clunky and brittle,
 depending on exact error message strings to make handling decisions. This can be
 cleaned up significantlly by using well defined error types like this:
+
 ```
 const Promise = require('bluebird').Promise;
 const { SchemaError } = require('@vamship/test-lib').args;
@@ -68,7 +72,9 @@ Javascript runtime, for example when an AWS API gateway attempts to handle an
 error thrown by a lambda function.
 
 ## Installation
+
 This library can be installed via npm using:
+
 ```
 npm install @vamship/error-types
 ```
@@ -110,4 +116,3 @@ throw new ArgError()
 // Throws an error with message '[SchemaError] Schema validation failed'
 throw new SchemaError()
 ```
-
