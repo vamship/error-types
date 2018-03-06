@@ -31,11 +31,7 @@
     "sinon-chai": "^3.0.0",
     "time-grunt": "^1.4.0"
   },
-  "dependencies": {
-    "ajv": "^6.2.1",
-    "bluebird": "^3.5.1",
-    "pino": "^4.13.0"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/vamship/error-types.git"
