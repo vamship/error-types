@@ -14,5 +14,10 @@ module.exports = {
     /**
      * http namespace.
      */
-    http: require('./http')
+    http: require('./http'),
+
+    /**
+     * data namespace.
+     */
+    data: require('./data')
 };

@@ -10,6 +10,7 @@ let _index = null;
 
 const _args = require('../../src/args');
 const _http = require('../../src/http');
+const _data = require('../../src/data');
 
 describe('_index', function() {
     beforeEach(() => {
@@ -19,5 +20,6 @@ describe('_index', function() {
     it('should implement methods required by the interface', function() {
         expect(_index.args).to.equal(_args);
         expect(_index.http).to.equal(_http);
+        expect(_index.data).to.equal(_data);
     });
 });
