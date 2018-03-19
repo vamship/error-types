@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="args.ArgError.html">ArgError</a></li><li><a href="args.ConcurrencyControlError.html">ConcurrencyControlError</a></li><li><a href="args.DuplicateRecordError.html">DuplicateRecordError</a></li><li><a href="args.SchemaError.html">SchemaError</a></li><li><a href="http.BadRequestError.html">BadRequestError</a></li><li><a href="http.NotFoundError.html">NotFoundError</a></li><li><a href="http.UnauthorizedError.html">UnauthorizedError</a></li></ul><h3>Namespaces</h3><ul><li><a href="args.html">args</a></li><li><a href="data.html">data</a></li><li><a href="http.html">http</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>@vamship/error-types</h1><p><em>Exports custom error types that describe specific error conditions</em></p>
+<p>Exports a set of classes that can be used to identify different types of errors.
+This is useful for post error processing, allowing for different behaviors for
+different error types.</p>
+<p>Each error comes with a default error message, but also supports custom
+error messages. All error messages are prefixed with the argument name to help
+make predictable decisions based on error messages.</p>
+<h1>Motivation</h1><p>Javascript is not a strongly typed language, but there are certain scenarios
+where having well defined types can be valuable. One of these scenarios pertain
+to error handling.</p>
+<p>Let us consider the following promise chain:</p>
+<pre class="prettyprint source"><code>const Promise = require('bluebird').Promise;
+...
+
+function fetchData(recordInfo) {
+    Promise.try(() => {
+        // Query the database for data. This call could succeed, or could throw
+        // either:
+        // (1) An error for failed schema validation
+        // (2) An error if the record was not found
+        queryDatabase(recordInfo)
+    }).catch((err) => {
+        //Check the error message and perform remedial actions.
+        if(err.message === 'Schema validation failed') {
+            //Deal with schema validation errors
+        } else if(err.message === 'Record not found') {
+            //Deal with record not found errors
+        } else {
+            //Handle all other errors.
+        }
+    });</code></pre><p>In the above example, the exception handling code is clunky and brittle,
+depending on exact error message strings to make handling decisions. This can be
+cleaned up significantlly by using well defined error types like this:</p>
+<pre class="prettyprint source"><code>const Promise = require('bluebird').Promise;
+const { SchemaError } = require('@vamship/test-lib').args;
+const { NotFoundError } = require('@vamship/test-lib').http;
+...
+
+function fetchData(recordInfo) {
+    Promise.try(() => {
+        // Query the database for data. This call could succeed, or could throw
+        // either:
+        // (1) SchemaError: If schema validation fails
+        // (2) NotFoundError: If the record was not found
+        queryDatabase(recordInfo)
+    }).catch(SchemaError, (err) => {
+        //Deal with schema validation errors
+    }).catch(NotFoundError, (err) => {
+        //Deal with record not found errors
+    }).catch((err) => {
+        //Handle all other errors.
+    });</code></pre><p>Strongly typed errors are also useful if the errors are processed outside the
+Javascript runtime, for example when an AWS API gateway attempts to handle an
+error thrown by a lambda function.</p>
+<h2>Installation</h2><p>This library can be installed via npm using:</p>
+<pre class="prettyprint source"><code>npm install @vamship/error-types</code></pre><h2>Usage</h2><p>The types exposed by this library are available under two namespaces:</p>
+<ul>
+<li><strong>args</strong>: Error types for argument validation errors</li>
+<li><strong>http</strong>: Error types for http errors</li>
+</ul>
+<h2>Examples</h2><h3>HTTP Errors</h3><pre class="prettyprint source"><code>const errorTypes = require('@vamship/error-types');
+const {BadRequestError, NotFoundError, UnauthorizedError} = errorTypes.http;
+
+// Throws an error with message '[BadRequestError] Incorrect or malformed request'
+throw new BadRequestError()
+
+// Throws an error with message '[NotFoundError] Resource not found'
+throw new NotFoundError()
+
+// Throws an error with message '[UnauthorizedError] Authorization failed'
+throw new UnauthorizedError()</code></pre><h3>Argument Errors</h3><pre class="prettyprint source"><code>const errorTypes = require('@vamship/error-types');
+const {ArgError, SchemaError} = errorTypes.args;
+
+// Throws an error with message '[ArgError] Arugment validation failed'
+throw new ArgError()
+
+// Throws an error with message '[SchemaError] Schema validation failed'
+throw new SchemaError()</code></pre></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Mar 19 2018 15:12:25 GMT-0400 (EDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
