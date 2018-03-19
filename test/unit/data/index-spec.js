@@ -9,6 +9,7 @@ const _rewire = require('rewire');
 let _index = null;
 
 const DuplicateRecordError = require('../../../src/data/duplicate-record-error');
+const ConcurrencyControlError = require('../../../src/data/concurrency-control-error');
 
 describe('_data', function() {
     beforeEach(() => {
@@ -17,5 +18,8 @@ describe('_data', function() {
 
     it('should implement methods required by the interface', function() {
         expect(_index.DuplicateRecordError).to.equal(DuplicateRecordError);
+        expect(_index.ConcurrencyControlError).to.equal(
+            ConcurrencyControlError
+        );
     });
 });

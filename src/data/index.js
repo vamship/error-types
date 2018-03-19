@@ -9,5 +9,10 @@ module.exports = {
     /**
      * @type {DuplicateRecordError}
      */
-    DuplicateRecordError: require('./duplicate-record-error')
+    DuplicateRecordError: require('./duplicate-record-error'),
+
+    /**
+     * @type {ConcurrencyControlError}
+     */
+    ConcurrencyControlError: require('./concurrency-control-error')
 };
