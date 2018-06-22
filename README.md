@@ -10,6 +10,9 @@ Each error comes with a default error message, but also supports custom
 error messages. All error messages are prefixed with the argument name to help
 make predictable decisions based on error messages.
 
+## API Documentation
+API documentation can be found [here](https://vamship.github.io/error-types).
+
 # Motivation
 
 Javascript is not a strongly typed language, but there are certain scenarios
