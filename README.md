@@ -11,6 +11,7 @@ error messages. All error messages are prefixed with the argument name to help
 make predictable decisions based on error messages.
 
 ## API Documentation
+
 API documentation can be found [here](https://vamship.github.io/error-types).
 
 # Motivation
