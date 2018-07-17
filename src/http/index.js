@@ -19,5 +19,10 @@ module.exports = {
     /**
      * @type {UnauthorizedError}
      */
-    UnauthorizedError: require('./unauthorized-error')
+    UnauthorizedError: require('./unauthorized-error'),
+
+    /**
+     * @type {ForbiddenError}
+     */
+    ForbiddenError: require('./forbidden-error')
 };
