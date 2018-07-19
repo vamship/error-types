@@ -14,7 +14,7 @@ class ForbiddenError extends Error {
     constructor(message) {
         super(message);
         if (typeof message !== 'string') {
-            message = 'Forbidden';
+            message = 'Access to this resource is forbidden';
         }
         this.name = 'ForbiddenError';
         this.message = `[${this.name}] ${message}`;

@@ -12,7 +12,7 @@ let ForbiddenError = null;
 
 describe('ForbiddenError', () => {
     const ERROR_NAME = 'ForbiddenError';
-    const ERROR_MESSAGE = 'Forbidden';
+    const ERROR_MESSAGE = 'Access to this resource is forbidden';
 
     function _getExpectedMessage(message) {
         message = message || ERROR_MESSAGE;
