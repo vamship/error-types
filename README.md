@@ -87,8 +87,8 @@ npm install @vamship/error-types
 
 The types exposed by this library are available under two namespaces:
 
-*   **args**: Error types for argument validation errors
-*   **http**: Error types for http errors
+-   **args**: Error types for argument validation errors
+-   **http**: Error types for http errors
 
 ## Examples
 
