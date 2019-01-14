@@ -8,3 +8,4 @@ Documentation for specific releases can be found here:
 ## [v1.2.1](./@vamship/error-types/1.2.1/index.html)
 ## [v1.3.0](./@vamship/error-types/1.3.0/index.html)
 ## [v1.3.1](./@vamship/error-types/1.3.1/index.html)
+## [v1.5.0](./@vamship/error-types/1.5.0/index.html)
