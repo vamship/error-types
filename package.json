@@ -1,41 +1,42 @@
 {
-  "name": "@vamship/error-types",
-  "version": "1.7.6",
-  "description": "Library that defines custom error types",
-  "main": "src/index.js",
-  "scripts": {
-    "all": "gulp --series format lint test-unit clean",
-    "test": "gulp test-unit"
-  },
-  "keywords": [],
-  "author": "Vamshi K Ponnapalli <vamshi.ponnapalli@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@vamship/build-utils": "0.1.0",
-    "@vamship/test-utils": "^2.4.7",
-    "ansi-colors": "^4.1.1",
-    "chai": "^4.2.0",
-    "chai-as-promised": "^7.1.1",
-    "docdash": "^1.1.1",
-    "gulp": "^4.0.2",
-    "gulp-jsdoc3": "^2.0.0",
-    "mocha": "^7.0.0",
-    "nyc": "^15.0.0",
-    "rewire": "^4.0.1",
-    "sinon": "^8.0.4",
-    "sinon-chai": "^3.4.0"
-  },
-  "dependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vamship/error-types.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vamship/error-types/issues"
-  },
-  "homepage": "https://github.com/vamship/error-types#readme",
-  "buildMetadata": {
-    "projectType": "lib",
-    "language": "js"
-  }
+    "name": "@vamship/error-types",
+    "version": "1.7.6",
+    "description": "Library that defines custom error types",
+    "main": "src/index.js",
+    "scripts": {
+        "all": "gulp --series format lint test-unit clean",
+        "test": "gulp test-unit"
+    },
+    "files": ["package.json", "LICENSE", "README.md", "src/**/*"],
+    "keywords": [],
+    "author": "Vamshi K Ponnapalli <vamshi.ponnapalli@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@vamship/build-utils": "0.1.0",
+        "@vamship/test-utils": "^2.4.7",
+        "ansi-colors": "^4.1.1",
+        "chai": "^4.2.0",
+        "chai-as-promised": "^7.1.1",
+        "docdash": "^1.1.1",
+        "gulp": "^4.0.2",
+        "gulp-jsdoc3": "^2.0.0",
+        "mocha": "^7.0.0",
+        "nyc": "^15.0.0",
+        "rewire": "^4.0.1",
+        "sinon": "^8.0.4",
+        "sinon-chai": "^3.4.0"
+    },
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vamship/error-types.git"
+    },
+    "bugs": {
+        "url": "https://github.com/vamship/error-types/issues"
+    },
+    "homepage": "https://github.com/vamship/error-types#readme",
+    "buildMetadata": {
+        "projectType": "lib",
+        "language": "js"
+    }
 }
