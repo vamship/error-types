@@ -24,5 +24,5 @@ module.exports = {
     /**
      * @type {ForbiddenError}
      */
-    ForbiddenError: require('./forbidden-error')
+    ForbiddenError: require('./forbidden-error'),
 };

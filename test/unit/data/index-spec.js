@@ -11,12 +11,12 @@ let _index = null;
 const DuplicateRecordError = require('../../../src/data/duplicate-record-error');
 const ConcurrencyControlError = require('../../../src/data/concurrency-control-error');
 
-describe('_data', function() {
+describe('_data', function () {
     beforeEach(() => {
         _index = _rewire('../../../src/data/index');
     });
 
-    it('should implement methods required by the interface', function() {
+    it('should implement methods required by the interface', function () {
         expect(_index.DuplicateRecordError).to.equal(DuplicateRecordError);
         expect(_index.ConcurrencyControlError).to.equal(
             ConcurrencyControlError

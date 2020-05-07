@@ -19,5 +19,5 @@ module.exports = {
     /**
      * data namespace.
      */
-    data: require('./data')
+    data: require('./data'),
 };

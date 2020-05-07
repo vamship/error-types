@@ -11,12 +11,12 @@ let _index = null;
 const ArgError = require('../../../src/args/arg-error');
 const SchemaError = require('../../../src/args/schema-error');
 
-describe('_args', function() {
+describe('_args', function () {
     beforeEach(() => {
         _index = _rewire('../../../src/args/index');
     });
 
-    it('should implement methods required by the interface', function() {
+    it('should implement methods required by the interface', function () {
         expect(_index.SchemaError).to.equal(SchemaError);
         expect(_index.ArgError).to.equal(ArgError);
     });

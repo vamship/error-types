@@ -13,12 +13,12 @@ const BadRequestError = require('../../../src/http/bad-request-error');
 const UnauthorizedError = require('../../../src/http/unauthorized-error');
 const ForbiddenError = require('../../../src/http/forbidden-error');
 
-describe('_http', function() {
+describe('_http', function () {
     beforeEach(() => {
         _index = _rewire('../../../src/http/index');
     });
 
-    it('should implement methods required by the interface', function() {
+    it('should implement methods required by the interface', function () {
         expect(_index.BadRequestError).to.equal(BadRequestError);
         expect(_index.NotFoundError).to.equal(NotFoundError);
         expect(_index.UnauthorizedError).to.equal(UnauthorizedError);

@@ -14,5 +14,5 @@ module.exports = {
     /**
      * @type {SchemaError}
      */
-    SchemaError: require('./schema-error')
+    SchemaError: require('./schema-error'),
 };
