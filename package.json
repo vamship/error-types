@@ -17,8 +17,8 @@
     "author": "Vamshi K Ponnapalli <vamshi.ponnapalli@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "@vamship/build-utils": "1.0.0-0",
-        "@vamship/test-utils": "^2.5.1",
+        "@vamship/build-utils": "1.0.0-3",
+        "@vamship/test-utils": "^2.5.3",
         "ansi-colors": "^4.1.1",
         "chai": "^4.3.4",
         "chai-as-promised": "^7.1.1",
