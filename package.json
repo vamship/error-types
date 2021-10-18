@@ -18,7 +18,7 @@
     "license": "MIT",
     "devDependencies": {
         "@vamship/build-utils": "^1.0.1",
-        "@vamship/test-utils": "^2.5.4",
+        "@vamship/test-utils": "^2.5.5",
         "chai": "^4.3.4",
         "chai-as-promised": "^7.1.1",
         "rewire": "^5.0.0",
