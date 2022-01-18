@@ -1,6 +1,6 @@
 {
     "name": "@vamship/error-types",
-    "version": "1.7.19",
+    "version": "1.7.20",
     "description": "Library that defines custom error types",
     "main": "src/index.js",
     "scripts": {
