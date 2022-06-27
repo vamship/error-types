@@ -15,4 +15,9 @@ module.exports = {
      * @type {ConcurrencyControlError}
      */
     ConcurrencyControlError: require('./concurrency-control-error'),
+
+    /**
+     * @type {ConflictError}
+     */
+    ConflictError: require('./conflict-error'),
 };
