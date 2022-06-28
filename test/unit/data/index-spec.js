@@ -10,6 +10,7 @@ let _index = null;
 
 const DuplicateRecordError = require('../../../src/data/duplicate-record-error');
 const ConcurrencyControlError = require('../../../src/data/concurrency-control-error');
+const ConflictError = require('../../../src/data/conflict-error');
 
 describe('_data', function () {
     beforeEach(() => {
@@ -20,6 +21,9 @@ describe('_data', function () {
         expect(_index.DuplicateRecordError).to.equal(DuplicateRecordError);
         expect(_index.ConcurrencyControlError).to.equal(
             ConcurrencyControlError
+        );
+        expect(_index.ConflictError).to.equal(
+            ConflictError
         );
     });
 });
