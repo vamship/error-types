@@ -2,10 +2,22 @@
     "name": "@vamship/error-types",
     "version": "1.8.0",
     "description": "Library that defines custom error types",
+    "type": "module",
     "main": "src/index.js",
     "scripts": {
-        "all": "gulp --series format lint test-unit clean",
-        "test": "gulp test-unit"
+        "clean": "gulp clean",
+        "format": "gulp format",
+        "lint": "gulp lint",
+        "lint-fix": "gulp lint-fix",
+        "build": "gulp build",
+        "test": "cross-env NODE_ENV=test dotenv-load gulp --series clean build test-unit",
+        "package": "cross-env NODE_ENV=test dotenv-load gulp --series clean format lint build test-unit package",
+        "publish": "gulp publish",
+        "docs": "gulp docs",
+        "all": "cross-env NODE_ENV=test dotenv-load gulp --series clean format lint build test-unit clean",
+        "watch:build": "gulp watch-build",
+        "watch:test": "cross-env NODE_ENV=development dotenv-load gulp watch-test-unit",
+        "watch:lint": "gulp watch-lint"
     },
     "files": [
         "package.json",
@@ -17,11 +29,13 @@
     "author": "Vamshi K Ponnapalli <vamshi.ponnapalli@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "@vamship/build-utils": "^1.1.0",
-        "@vamship/test-utils": "^2.5.8",
+        "@vamship/build-utils": "file:../build-utils",
+        "@vamship/test-utils": "file:../test-utils",
         "chai": "^4.3.4",
         "chai-as-promised": "^7.1.1",
-        "rewire": "^6.0.0",
+        "cross-env": "^7.0.3",
+        "dotenv-load": "^3.0.0",
+        "gulp": "^4.0.2",
         "sinon": "^12.0.1",
         "sinon-chai": "^3.7.0"
     },
@@ -34,7 +48,7 @@
     },
     "homepage": "https://github.com/vamship/error-types#readme",
     "buildMetadata": {
-        "projectType": "lib",
-        "language": "js"
+        "type": "lib",
+        "language": "ts"
     }
 }
