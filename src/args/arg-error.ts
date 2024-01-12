@@ -1,18 +1,16 @@
-'use strict';
-
 /**
  * Specialized error type intended to be used for errors that occur due to
  * failures in input argument validations.
  *
  * @memberof args
- * @extends {Error}
  */
-class ArgError extends Error {
+export default class ArgError extends Error {
     /**
-     * @param {String} message The error message associated with the error.
+     * @param message The error message associated with the error.
      */
-    constructor(message) {
+    constructor(message: string | undefined = undefined) {
         super(message);
+
         if (typeof message !== 'string') {
             message = 'Argument validation failed';
         }
@@ -20,5 +18,3 @@ class ArgError extends Error {
         this.message = `[${this.name}] ${message}`;
     }
 }
-
-module.exports = ArgError;

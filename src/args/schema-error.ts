@@ -1,17 +1,14 @@
-'use strict';
-
 /**
  * Specialized error type intended to be used for errors that occur due to
  * failures in schema validations.
  *
  * @memberof args
- * @extends {Error}
  */
-class SchemaError extends Error {
+export default class SchemaError extends Error {
     /**
-     * @param {String} message The error message associated with the error.
+     * @param message The error message associated with the error.
      */
-    constructor(message) {
+    constructor(message: string | undefined = undefined) {
         super(message);
         if (typeof message !== 'string') {
             message = 'Schema validation failed';
@@ -20,5 +17,3 @@ class SchemaError extends Error {
         this.message = `[${this.name}] ${message}`;
     }
 }
-
-module.exports = SchemaError;

@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Specialized error type intended to be used when a HTTP request is malformed
  * or invalid (HTTP 400).
@@ -7,11 +5,11 @@
  * @memberof http
  * @extends {Error}
  */
-class BadRequestError extends Error {
+export default class BadRequestError extends Error {
     /**
-     * @param {String} message The error message associated with the error.
+     * @param message The error message associated with the error.
      */
-    constructor(message) {
+    constructor(message: string | undefined = undefined) {
         super(message);
         if (typeof message !== 'string') {
             message = 'Incorrect or malformed request';
@@ -20,5 +18,3 @@ class BadRequestError extends Error {
         this.message = `[${this.name}] ${message}`;
     }
 }
-
-module.exports = BadRequestError;

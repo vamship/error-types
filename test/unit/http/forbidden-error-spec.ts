@@ -1,27 +1,25 @@
-'use strict';
+import _chai, {expect} from 'chai';
+import _sinonChai from 'sinon-chai';
+import _chaiAsPromised from 'chai-as-promised';
+import 'mocha';
 
-const _chai = require('chai');
-_chai.use(require('sinon-chai'));
-_chai.use(require('chai-as-promised'));
-const expect = _chai.expect;
+_chai.use(_sinonChai);
+_chai.use(_chaiAsPromised);
 
-const _rewire = require('rewire');
-const _testValues = require('@vamship/test-utils').testValues;
+import {testValues as _testValues} from '@vamship/test-utils';
+const { allButString } = _testValues;
+type AnyInput = _testValues.AnyInput;
 
-let ForbiddenError = null;
+import ForbiddenError from '../../../src/http/forbidden-error';
 
 describe('ForbiddenError', () => {
     const ERROR_NAME = 'ForbiddenError';
     const ERROR_MESSAGE = 'Access to this resource is forbidden';
 
-    function _getExpectedMessage(message) {
+    function _getExpectedMessage(message: string|undefined = undefined) {
         message = message || ERROR_MESSAGE;
         return `[${ERROR_NAME}] ${message}`;
     }
-
-    beforeEach(() => {
-        ForbiddenError = _rewire('../../../src/http/forbidden-error');
-    });
 
     describe('ctor()', () => {
         it('should return an Error object with default property values', () => {
@@ -40,11 +38,9 @@ describe('ForbiddenError', () => {
             expect(error.message).to.equal(_getExpectedMessage(message));
         });
 
-        it('should ignore any message values that are not strings', () => {
-            const inputs = _testValues.allButString();
-
-            inputs.forEach((message) => {
-                const error = new ForbiddenError(message);
+        allButString().forEach((message: AnyInput) => {
+            it(`should ignore any message values that are not strings (value=${message})`, () => {
+                const error = new ForbiddenError(message as any);
                 expect(error.message).to.equal(_getExpectedMessage());
             });
         });

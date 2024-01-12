@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Specialized error type intended to be used when a request is made for a
  * resource that could not be found (HTTP 404).
@@ -7,11 +5,11 @@
  * @memberof http
  * @extends {Error}
  */
-class NotFoundError extends Error {
+export default class NotFoundError extends Error {
     /**
-     * @param {String} message The error message associated with the error.
+     * @param message The error message associated with the error.
      */
-    constructor(message) {
+    constructor(message: string | undefined = undefined) {
         super(message);
         if (typeof message !== 'string') {
             message = 'Resource not found';
@@ -20,5 +18,3 @@ class NotFoundError extends Error {
         this.message = `[${this.name}] ${message}`;
     }
 }
-
-module.exports = NotFoundError;

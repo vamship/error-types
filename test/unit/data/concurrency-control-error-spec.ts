@@ -1,29 +1,25 @@
-'use strict';
+import _chai, {expect} from 'chai';
+import _sinonChai from 'sinon-chai';
+import _chaiAsPromised from 'chai-as-promised';
+import 'mocha';
 
-const _chai = require('chai');
-_chai.use(require('sinon-chai'));
-_chai.use(require('chai-as-promised'));
-const expect = _chai.expect;
+_chai.use(_sinonChai);
+_chai.use(_chaiAsPromised);
 
-const _rewire = require('rewire');
-const _testValues = require('@vamship/test-utils').testValues;
+import {testValues as _testValues} from '@vamship/test-utils';
+const { allButString } = _testValues;
+type AnyInput = _testValues.AnyInput;
 
-let ConcurrencyControlError = null;
+import ConcurrencyControlError from '../../../src/data/concurrency-control-error';
 
 describe('ConcurrencyControlError', () => {
     const ERROR_NAME = 'ConcurrencyControlError';
     const ERROR_MESSAGE = 'Concurrency check failed';
 
-    function _getExpectedMessage(message) {
+    function _getExpectedMessage(message: string|undefined = undefined) {
         message = message || ERROR_MESSAGE;
         return `[${ERROR_NAME}] ${message}`;
     }
-
-    beforeEach(() => {
-        ConcurrencyControlError = _rewire(
-            '../../../src/data/concurrency-control-error'
-        );
-    });
 
     describe('ctor()', () => {
         it('should return an Error object with default property values', () => {
@@ -42,13 +38,12 @@ describe('ConcurrencyControlError', () => {
             expect(error.message).to.equal(_getExpectedMessage(message));
         });
 
-        it('should ignore any message values that are not strings', () => {
-            const inputs = _testValues.allButString();
-
-            inputs.forEach((message) => {
-                const error = new ConcurrencyControlError(message);
+        allButString().forEach((message: AnyInput) => {
+            it(`should ignore any message values that are not strings (value=${message})`, () => {
+                const error = new ConcurrencyControlError(message as any);
                 expect(error.message).to.equal(_getExpectedMessage());
             });
         });
     });
 });
+
