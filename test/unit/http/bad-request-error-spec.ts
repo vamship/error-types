@@ -10,7 +10,7 @@ import {testValues as _testValues} from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import BadRequestError from '../../../src/http/bad-request-error';
+import BadRequestError from '../../../src/http/bad-request-error.js';
 
 describe('BadRequestError', () => {
     const ERROR_NAME = 'BadRequestError';

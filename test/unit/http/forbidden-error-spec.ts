@@ -10,7 +10,7 @@ import {testValues as _testValues} from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import ForbiddenError from '../../../src/http/forbidden-error';
+import ForbiddenError from '../../../src/http/forbidden-error.js';
 
 describe('ForbiddenError', () => {
     const ERROR_NAME = 'ForbiddenError';

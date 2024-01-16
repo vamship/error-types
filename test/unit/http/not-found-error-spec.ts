@@ -10,7 +10,7 @@ import {testValues as _testValues} from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import NotFoundError from '../../../src/http/not-found-error';
+import NotFoundError from '../../../src/http/not-found-error.js';
 
 describe('NotFoundError', () => {
     const ERROR_NAME = 'NotFoundError';

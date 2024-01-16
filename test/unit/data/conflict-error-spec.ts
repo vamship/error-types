@@ -10,7 +10,7 @@ import {testValues as _testValues} from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import ConflictError from '../../../src/data/conflict-error';
+import ConflictError from '../../../src/data/conflict-error.js';
 
 describe('ConflictError', () => {
     const ERROR_NAME = 'ConflictError';

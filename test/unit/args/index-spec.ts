@@ -6,9 +6,9 @@ import 'mocha';
 _chai.use(_sinonChai);
 _chai.use(_chaiAsPromised);
 
-import * as _index from '../../../src/args/index';
-import ArgError from '../../../src/args/arg-error';
-import SchemaError from '../../../src/args/schema-error';
+import * as _index from '../../../src/args/index.js';
+import * as ArgError from '../../../src/args/arg-error.js';
+import * as SchemaError from '../../../src/args/schema-error.js';
 
 describe('_args', function () {
     it('should implement methods required by the interface', function () {

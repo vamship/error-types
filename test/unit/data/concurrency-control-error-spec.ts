@@ -10,7 +10,7 @@ import {testValues as _testValues} from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import ConcurrencyControlError from '../../../src/data/concurrency-control-error';
+import ConcurrencyControlError from '../../../src/data/concurrency-control-error.js';
 
 describe('ConcurrencyControlError', () => {
     const ERROR_NAME = 'ConcurrencyControlError';

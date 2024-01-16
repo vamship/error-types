@@ -10,7 +10,7 @@ import {testValues as _testValues} from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import UnauthorizedError from '../../../src/http/unauthorized-error';
+import UnauthorizedError from '../../../src/http/unauthorized-error.js';
 
 describe('UnauthorizedError', () => {
     const ERROR_NAME = 'UnauthorizedError';

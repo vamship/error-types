@@ -6,11 +6,11 @@ import 'mocha';
 _chai.use(_sinonChai);
 _chai.use(_chaiAsPromised);
 
-import * as _index from '../../../src/http/index';
-import NotFoundError from '../../../src/http/not-found-error';
-import BadRequestError from '../../../src/http/bad-request-error';
-import UnauthorizedError from '../../../src/http/unauthorized-error';
-import ForbiddenError from '../../../src/http/forbidden-error';
+import * as _index from '../../../src/http/index.js';
+import * as NotFoundError from '../../../src/http/not-found-error.js';
+import * as BadRequestError from '../../../src/http/bad-request-error.js';
+import * as UnauthorizedError from '../../../src/http/unauthorized-error.js';
+import * as ForbiddenError from '../../../src/http/forbidden-error.js';
 
 describe('_http', function () {
     it('should implement methods required by the interface', function () {

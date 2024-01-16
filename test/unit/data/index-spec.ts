@@ -6,10 +6,10 @@ import 'mocha';
 _chai.use(_sinonChai);
 _chai.use(_chaiAsPromised);
 
-import * as _index from '../../../src/data/index';
-import DuplicateRecordError from '../../../src/data/duplicate-record-error';
-import ConcurrencyControlError from '../../../src/data/concurrency-control-error';
-import ConflictError from '../../../src/data/conflict-error';
+import * as _index from '../../../src/data/index.js';
+import * as DuplicateRecordError from '../../../src/data/duplicate-record-error.js';
+import * as ConcurrencyControlError from '../../../src/data/concurrency-control-error.js';
+import * as ConflictError from '../../../src/data/conflict-error.js';
 
 describe('_data', function () {
     it('should implement methods required by the interface', function () {

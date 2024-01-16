@@ -10,7 +10,7 @@ import {testValues as _testValues} from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import SchemaError from '../../../src/args/schema-error';
+import SchemaError from '../../../src/args/schema-error.js';
 
 describe('SchemaError', () => {
     const ERROR_NAME = 'SchemaError';
