@@ -36,14 +36,14 @@
         "@vamship/build-utils": "file:../build-utils",
         "@vamship/test-utils": "file:../test-utils/dist/package",
         "c8": "^9.1.0",
-        "chai": "^4.3.4",
+        "chai": "^5.0.0",
         "chai-as-promised": "^7.1.1",
         "cross-env": "^7.0.3",
         "dotenv-load": "^3.0.0",
         "esmock": "^2.6.2",
         "gulp": "^4.0.2",
         "mocha": "^10.2.0",
-        "sinon": "^12.0.1",
+        "sinon": "^17.0.1",
         "sinon-chai": "^3.7.0"
     },
     "repository": {
