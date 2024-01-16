@@ -1,10 +1,10 @@
-import _chai, { expect } from 'chai';
+import { expect, use as _useWithChai } from 'chai';
 import _sinonChai from 'sinon-chai';
 import _chaiAsPromised from 'chai-as-promised';
 import 'mocha';
 
-_chai.use(_sinonChai);
-_chai.use(_chaiAsPromised);
+_useWithChai(_sinonChai);
+_useWithChai(_chaiAsPromised);
 
 import * as _args from '../../src/args/index.js';
 import * as _http from '../../src/http/index.js';

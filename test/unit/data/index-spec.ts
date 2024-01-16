@@ -1,10 +1,10 @@
-import _chai, { expect } from 'chai';
+import { expect, use as _useWithChai } from 'chai';
 import _sinonChai from 'sinon-chai';
 import _chaiAsPromised from 'chai-as-promised';
 import 'mocha';
 
-_chai.use(_sinonChai);
-_chai.use(_chaiAsPromised);
+_useWithChai(_sinonChai);
+_useWithChai(_chaiAsPromised);
 
 import * as _index from '../../../src/data/index.js';
 import * as DuplicateRecordError from '../../../src/data/duplicate-record-error.js';
