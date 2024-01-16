@@ -40,6 +40,7 @@ describe('UnauthorizedError', () => {
 
         allButString().forEach((message: AnyInput) => {
             it(`should ignore any message values that are not strings (value=${message})`, () => {
+                /* eslint-disable  tsel/no-explicit-any */
                 const error = new UnauthorizedError(message as any);
                 expect(error.message).to.equal(_getExpectedMessage());
             });
