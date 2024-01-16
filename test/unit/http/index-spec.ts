@@ -1,4 +1,4 @@
-import _chai, {expect} from 'chai';
+import _chai, { expect } from 'chai';
 import _sinonChai from 'sinon-chai';
 import _chaiAsPromised from 'chai-as-promised';
 import 'mocha';

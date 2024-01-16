@@ -1,4 +1,4 @@
-import _chai, {expect} from 'chai';
+import _chai, { expect } from 'chai';
 import _sinonChai from 'sinon-chai';
 import _chaiAsPromised from 'chai-as-promised';
 import 'mocha';
@@ -6,7 +6,7 @@ import 'mocha';
 _chai.use(_sinonChai);
 _chai.use(_chaiAsPromised);
 
-import {testValues as _testValues} from '@vamship/test-utils';
+import { testValues as _testValues } from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
@@ -16,7 +16,7 @@ describe('ForbiddenError', () => {
     const ERROR_NAME = 'ForbiddenError';
     const ERROR_MESSAGE = 'Access to this resource is forbidden';
 
-    function _getExpectedMessage(message: string|undefined = undefined) {
+    function _getExpectedMessage(message: string | undefined = undefined) {
         message = message || ERROR_MESSAGE;
         return `[${ERROR_NAME}] ${message}`;
     }

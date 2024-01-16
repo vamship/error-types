@@ -1,4 +1,4 @@
-import _chai, {expect} from 'chai';
+import _chai, { expect } from 'chai';
 import _sinonChai from 'sinon-chai';
 import _chaiAsPromised from 'chai-as-promised';
 import 'mocha';
@@ -17,8 +17,6 @@ describe('_data', function () {
         expect(_index.ConcurrencyControlError).to.equal(
             ConcurrencyControlError
         );
-        expect(_index.ConflictError).to.equal(
-            ConflictError
-        );
+        expect(_index.ConflictError).to.equal(ConflictError);
     });
 });

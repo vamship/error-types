@@ -6,7 +6,7 @@ import 'mocha';
 _chai.use(_sinonChai);
 _chai.use(_chaiAsPromised);
 
-import {testValues as _testValues} from '@vamship/test-utils';
+import { testValues as _testValues } from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
@@ -16,7 +16,7 @@ describe('UnauthorizedError', () => {
     const ERROR_NAME = 'UnauthorizedError';
     const ERROR_MESSAGE = 'Authorization failed';
 
-    function _getExpectedMessage(message: string|undefined = undefined) {
+    function _getExpectedMessage(message: string | undefined = undefined) {
         message = message || ERROR_MESSAGE;
         return `[${ERROR_NAME}] ${message}`;
     }
