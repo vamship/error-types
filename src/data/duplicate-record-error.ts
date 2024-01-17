@@ -5,7 +5,7 @@
  * @memberof args
  * @extends {Error}
  */
-export default class DuplicateRecordError extends Error {
+export class DuplicateRecordError extends Error {
     /**
      * @param message The error message associated with the error.
      */

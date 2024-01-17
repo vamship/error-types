@@ -10,7 +10,7 @@ import { testValues as _testValues } from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import DuplicateRecordError from '../../../src/data/duplicate-record-error.js';
+import { DuplicateRecordError } from '../../../src/data/duplicate-record-error.js';
 
 describe('DuplicateRecordError', () => {
     const ERROR_NAME = 'DuplicateRecordError';

@@ -1,2 +1,2 @@
-export * as ArgError from './arg-error.js';
-export * as SchemaError from './schema-error.js';
+export { ArgError } from './arg-error.js';
+export { SchemaError } from './schema-error.js';

@@ -5,7 +5,7 @@
  * @memberof http
  * @extends {Error}
  */
-export default class UnauthorizedError extends Error {
+export class UnauthorizedError extends Error {
     /**
      * @param {String} message The error message associated with the error.
      */

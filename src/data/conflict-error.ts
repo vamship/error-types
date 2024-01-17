@@ -5,7 +5,7 @@
  * @memberof args
  * @extends {Error}
  */
-export default class ConflictError extends Error {
+export class ConflictError extends Error {
     /**
      * @param message The error message associated with the error.
      */

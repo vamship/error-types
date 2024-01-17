@@ -7,7 +7,7 @@
  *
  * @memberof args
  */
-export default class ConcurrencyControlError extends Error {
+export class ConcurrencyControlError extends Error {
     /**
      * @param message The error message associated with the error.
      */

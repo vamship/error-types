@@ -10,7 +10,7 @@ import { testValues as _testValues } from '@vamship/test-utils';
 const { allButString } = _testValues;
 type AnyInput = _testValues.AnyInput;
 
-import ArgError from '../../../src/args/arg-error.js';
+import { ArgError } from '../../../src/args/arg-error.js';
 
 describe('ArgError', () => {
     const ERROR_NAME = 'ArgError';

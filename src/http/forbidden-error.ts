@@ -5,7 +5,7 @@
  * @memberof http
  * @extends {Error}
  */
-export default class ForbiddenError extends Error {
+export class ForbiddenError extends Error {
     /**
      * @param message The error message associated with the error.
      */

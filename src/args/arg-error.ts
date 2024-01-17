@@ -4,7 +4,7 @@
  *
  * @memberof args
  */
-export default class ArgError extends Error {
+export class ArgError extends Error {
     /**
      * @param message The error message associated with the error.
      */

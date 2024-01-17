@@ -5,7 +5,7 @@
  * @memberof http
  * @extends {Error}
  */
-export default class NotFoundError extends Error {
+export class NotFoundError extends Error {
     /**
      * @param message The error message associated with the error.
      */

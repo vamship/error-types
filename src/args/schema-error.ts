@@ -4,7 +4,7 @@
  *
  * @memberof args
  */
-export default class SchemaError extends Error {
+export class SchemaError extends Error {
     /**
      * @param message The error message associated with the error.
      */

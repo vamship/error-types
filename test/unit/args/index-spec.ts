@@ -7,10 +7,10 @@ _useWithChai(_sinonChai);
 _useWithChai(_chaiAsPromised);
 
 import * as _index from '../../../src/args/index.js';
-import * as ArgError from '../../../src/args/arg-error.js';
-import * as SchemaError from '../../../src/args/schema-error.js';
+import { ArgError } from '../../../src/args/arg-error.js';
+import { SchemaError } from '../../../src/args/schema-error.js';
 
-describe('_args', function () {
+describe('[args]', function () {
     it('should implement methods required by the interface', function () {
         expect(_index.SchemaError).to.equal(SchemaError);
         expect(_index.ArgError).to.equal(ArgError);
