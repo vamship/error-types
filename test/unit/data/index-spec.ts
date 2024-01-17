@@ -15,7 +15,7 @@ describe('[data]', function () {
     it('should implement methods required by the interface', function () {
         expect(_index.DuplicateRecordError).to.equal(DuplicateRecordError);
         expect(_index.ConcurrencyControlError).to.equal(
-            ConcurrencyControlError
+            ConcurrencyControlError,
         );
         expect(_index.ConflictError).to.equal(ConflictError);
     });
